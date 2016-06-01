@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Личный сайт студента</title>
+	
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript">
+      var number = parseInt(Math.random() * 100 +1);
+	  	function cheackAnswer(tagName, number){
+          answer = document.getElementById(tagName).value;
+		  	if(answer == 'q')
+				return true;
+			answer = parseInt(answer);
+			if(answer == number) {
+				alert('Поздравляю!!! Вы угадали!');
+				return true;
+			}
+			if(answer < 1 || answer > 100) {
+				alert('Введи число от 1 до 100');
+				return false;
+			}
+			else {
+				if(answer > number) {
+					alert('Загаданное число меньше');
+				return false;
+				} else
+					alert('Загаданное число больше');
+				return false;
+			}
+		}
+		
+		function cheackAnswer_1(){
+			cheackAnswer('userAnswer', number);
+		}
+		
+
+  </script>
+</head>
+
+<body>
+<div id="tooplate_body_wrapper" />
+<div id="tooplate_wrapper" />
+<div id="tooplate_header">
+	<div id="tooplate_menu">
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="puzzle.html">Загадки</a></li>
+			<li><a href="guess_1.html">Угадай число</a></li>
+			<li><a href="guess_2.html">Угадайте число</a></li>			
+		</ul>    	
+	</div>
+</div>
+    
+<div id="content_box">
+		
+	<div id="content_title">
+		<h2>Угадай число</h2>
+	</div>
+	<div id="content">
+
+	<p>Введите число от 1 до 100 или набирете q для выхода      
+	<input type="text" id="userAnswer" /> <p/>
+	</br></br></br>
+
+	<input type="button" value="Ответить" onClick="cheackAnswer_1()" />
+
+		
+	</div>
+           
+    <div id="tooplate_footer">    
+        Copyright © 2016 <a href="http://geekbrains.ru">GeekBrains</a>
+    </div>
+    
+</div>
+
+</body>
+</html>

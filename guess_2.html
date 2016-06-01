@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Личный сайт студента</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+      
+	function start() {
+		var number = parseInt(Math.random() * 100 +1);
+		var user_1 = prompt('Назовите свое имя игрок 1');
+		var user_2 = prompt('Назовите свое имя игрок 2');
+
+	while(true){
+		var userAnswer_1 = prompt('Попытка игрока ' + user_1 + '. Ваш ответ');
+		userAnswer_1 = parseInt(userAnswer_1);
+		if(userAnswer_1 < 1 || userAnswer_1 > 100) {
+			alert('Вы ошиблись и ход переходит к ' + user_2);
+		} else {
+			if (userAnswer_1 == number) {
+				alert('Поздравляю! ' + user_1 + ' Вы победили.');
+				break;
+			} else {
+				if(userAnswer_1 > number) {
+					alert('Почти угадал, но нужно меньше.');
+					alert('Теперь ходит ' + user_2);
+				} else {
+					alert('Почти угадал, но нужно больше.');
+					alert('Теперь ходит ' + user_2);
+				} 
+			}
+		}
+		var userAnswer_2 = prompt('Попытка игрока ' + user_2 + '. Ваш ответ');
+		userAnswer_2 = parseInt(userAnswer_2);
+		if(userAnswer_2 < 1 || userAnswer_2 > 100) {
+			alert('Вы ошиблись и ход переходит к ' + user_1);
+		} else {
+			if (userAnswer_2 == number) {
+				alert('Поздравляю! ' + user_2 + ' Вы победили.');
+				break;
+			} else {
+				if(userAnswer_2 > number) {
+					alert('Почти угадал, но нужно меньше.');
+					alert('Теперь ходит ' + user_1);
+				} else {
+					alert('Почти угадал, но нужно больше.');
+					alert('Теперь ходит ' + user_1);
+				} 
+			}
+		}
+	}
+  
+	}
+	  
+  </script>
+</head>
+
+<body>
+<div id="tooplate_body_wrapper" />
+<div id="tooplate_wrapper" />
+<div id="tooplate_header">
+	<div id="tooplate_menu">
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="puzzle.html">Загадки</a></li>
+			<li><a href="guess_1.html">Угадай число</a></li>
+			<li><a href="guess_2.html">Угадайте число</a></li>			
+		</ul>    	
+	</div>
+</div>
+    
+<div id="content_box">
+		
+	<div id="content_title">
+		<h2>Угадайте число</h2>
+	</div>
+	<div id="content">
+        <p>Я загадал число от 1 до 100. Попробуйте отгадать!</p>
+        <p>У Вас будет неограниченное количество попыток. После каждой попытки Вы узнаете, больше или меньше Ваш ответ относительно правильного ответа.</p>
+        <p>Удачи Вам!</p>
+      <input type="button" value="Начать игру" onclick="start()" id="buttonText" />
+	</div>
+           
+    <div id="tooplate_footer">    
+        Copyright © 2016 <a href="http://geekbrains.ru">GeekBrains</a>
+    </div>
+    
+</div>
+
+</body>
+</html>
